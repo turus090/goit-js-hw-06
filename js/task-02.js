@@ -7,7 +7,18 @@ const ingredients = [
   'Condiments',
 ];
 
-const ingredientsList = document.getElementById('ingredients');
+const ingredientsEl = document.querySelector('#ingredients');
+const elements = ingredients.map(ingredient => {
+  const element = document.createElement('li');
+  element.classList.add('item');
+  element.textContent = ingredient;
+
+  return element;
+});
+console.log(elements);
+ingredientsEl.append(...elements);
+
+// const ingredientsList = document.getElementById('ingredients');
 
 // listElement.classList.add('item')
 
@@ -44,21 +55,5 @@ ingredients.forEach(item => {
 // createIngredientsList(ingredients);
 
 
-const ulEl = document.querySelector('ul');
 
-const elements = [];
-
-for (let i = 0; i < ingredients.length; i += 1) {
-  const ing = ingredients[i];
-
-  const liEl = document.createElement('li');
-  liEl.textContent = ing;
-
-  liEl.classList.add('item');
-  elements.push(liEl);
-  elements.push(liEl);
-
-}
-
-ulEl.append(...elements);
 // квери селектор для ЮЛ ! forEch дял каждого єл. сделать документ креат элемент ....

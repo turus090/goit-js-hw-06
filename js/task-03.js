@@ -38,14 +38,14 @@ const images = [
 
 // v2
 
-const ulEl = document.querySelector('.gallery');
+// const ulEl = document.querySelector('.gallery');
 
-images.forEach(el => {
-  ulEl.insertAdjacentHTML(
-    'afterbegin',
-    `<li><img src = "${el.url}" alt = "${el.alt}"  width = "350" height = "250" /></li>`,
-  );
-}); 
+// images.forEach(el => {
+//   ulEl.insertAdjacentHTML(
+//     'afterbegin',
+//     `<li><img src = "${el.url}" alt = "${el.alt}"  width = "350" height = "250" /></li>`,
+//   );
+// }); 
 
 //v3
 
@@ -58,15 +58,16 @@ images.forEach(el => {
 //   container.insertAdjacentHTML(position: 'beforeend', imagesHtml);
 
 //v4
-// const MakeGalleryMarkUp = transaction => {
-//   const { url, alt } = transaction;
-//   return `<li class="item__image"> 
-//   <img class = "image" src = '${url}' alt = '${alt}'/>
-//   </li>`;
-// }
-// const listEl = document.querySelector('.gallery');
 
-// const makeGallery = images.map(MakeGalleryMarkUp).join('');
+const MakeGalleryMarkUp = transaction => {
+  const { url, alt } = transaction;
+  return `<li class="item__image"> 
+  <img class = "image" src = '${url}' alt = '${alt} 'width = "350" height = "250"/>
+  </li>`;
+}
+const listEl = document.querySelector('.gallery');
 
-// listEl.insertAdjacentHTML('afterbegin', makeGallery);
-// console.log(makeGallery);
+const makeGallery = images.map(MakeGalleryMarkUp).join('');
+
+listEl.insertAdjacentHTML('afterbegin', makeGallery);
+console.log(makeGallery);
